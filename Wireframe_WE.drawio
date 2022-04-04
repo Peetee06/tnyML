@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-04T20:43:22.863Z" agent="5.0 (X11)" etag="ybslR13Mmkxxgrk5PSJN" version="17.4.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-04T20:49:45.516Z" agent="5.0 (X11)" etag="axdLQiQ2piEfQIXUxea1" version="17.4.0" type="github">
   <diagram id="4tYLgL0oTLtT2UZnyV7o" name="Page-1">
     <mxGraphModel dx="1350" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="2769" math="0" shadow="0">
       <root>
@@ -156,6 +156,24 @@
         </mxCell>
         <mxCell id="2kNzjl0Pul56ljBtTVwd-43" value="load configuration" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="240" y="1140" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-44" value="Evaluation Graphs" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1630" width="420" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-51" value="evaluate model" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1630" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-52" value="Evaluation Information" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1850" width="420" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-53" value="Data Preview" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="2150" width="420" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-54" value="apply model" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="2400" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-55" value="Result" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="2440" width="410" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
