@@ -1,1 +1,163 @@
-<mxfile host="app.diagrams.net" modified="2022-04-04T20:13:47.220Z" agent="5.0 (X11)" etag="tg4pdzs-j690AIeMNNcE" version="17.4.0" type="github"><diagram id="4tYLgL0oTLtT2UZnyV7o" name="Page-1">zZhdb5swFIZ/DZeVwCaGXLYp6zSp0tR02m4dOAFLBjPHCbBfP1NMCIF02QWCm8R+z4ft55gPY+FNWr5ImievIgJuITsqLfxsIeTgla3/aqVqFI+4jRBLFhmnTtiyP2BEExcfWQSHnqMSgiuW98VQZBmEqqdRKUXRd9sL3h81pzEMhG1I+VD9ySKVNKqPvE7/CixOzMgIkXVjSWnrbFZySGgkigsJBxbeSCFU00rLDfAaXsuliftyw3qemIRM3RPg+uWvYJc97h5+v7KXQLwR8u3BZDlRfjQLNpNVVUtAimMWQZ3EtvBTkTAF25yGtbXQNddaolKue45umnQgFZQ35+mcV6+3DYgUlKy0iwlwDa+q3y06+h4xWnJB3vWNSE3F43PmDopuGC7/wQgtntGKzA4JLx6SY/uzU3KXT4nYs1NaDSj9yLmgkdaeqaKzI7tmhrwhMn+EGJoKGBnZVoTrUZ8idtLNuG6+050Ghmyx1z8NUOiQNu569IuIkSR7IXXIG5wYFK15J68DrtPMXC9M+vUaKZfrjO3wyQrm3PFMiTWm/ObqzfvOR00v3zLup3IFZeQR4qARKM5qKijegEmzNe326p98G31SqyHGf4HCU3Hyb3H6LiGXIoTDgWXx0nBVfSqz0VsP6LWHlndJWbZccvdeoJORa2+RI+iCWqOKiWyh8NazwxuetB7znNdTNBAXye0MaQJwutudfj9sF98QcPAX</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-04-04T20:43:22.863Z" agent="5.0 (X11)" etag="ybslR13Mmkxxgrk5PSJN" version="17.4.0" type="github">
+  <diagram id="4tYLgL0oTLtT2UZnyV7o" name="Page-1">
+    <mxGraphModel dx="1350" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="2769" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="48xXEbnAb-qMiGEoR66J-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="760" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="48xXEbnAb-qMiGEoR66J-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="560" width="760" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="48xXEbnAb-qMiGEoR66J-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1080" width="760" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="48xXEbnAb-qMiGEoR66J-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1600" width="760" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="48xXEbnAb-qMiGEoR66J-5" value="Upload Data" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="270" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="48xXEbnAb-qMiGEoR66J-6" value="&lt;div&gt;Table of Uploaded Data&lt;/div&gt;&lt;div&gt;for Review&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="350" y="70" width="420" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="48xXEbnAb-qMiGEoR66J-12" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="60" y="60" width="120" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="48xXEbnAb-qMiGEoR66J-7" value="Data Upload" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" parent="48xXEbnAb-qMiGEoR66J-12" vertex="1">
+          <mxGeometry width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="48xXEbnAb-qMiGEoR66J-8" value="Data Preprocessing" style="rounded=0;whiteSpace=wrap;html=1;" parent="48xXEbnAb-qMiGEoR66J-12" vertex="1">
+          <mxGeometry y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="48xXEbnAb-qMiGEoR66J-9" value="Model Training" style="rounded=0;whiteSpace=wrap;html=1;" parent="48xXEbnAb-qMiGEoR66J-12" vertex="1">
+          <mxGeometry y="60" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="48xXEbnAb-qMiGEoR66J-10" value="Model Evaluation" style="rounded=0;whiteSpace=wrap;html=1;" parent="48xXEbnAb-qMiGEoR66J-12" vertex="1">
+          <mxGeometry y="90" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="48xXEbnAb-qMiGEoR66J-11" value="Apply Model" style="rounded=0;whiteSpace=wrap;html=1;" parent="48xXEbnAb-qMiGEoR66J-12" vertex="1">
+          <mxGeometry y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-1" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="60" y="580" width="120" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-2" value="Data Upload" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-1">
+          <mxGeometry width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-3" value="Data Preprocessing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-1">
+          <mxGeometry y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-4" value="Model Training" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-1">
+          <mxGeometry y="60" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-5" value="Model Evaluation" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-1">
+          <mxGeometry y="90" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-6" value="Apply Model" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-1">
+          <mxGeometry y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-8" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="60" y="1100" width="120" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-9" value="Data Upload" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-8">
+          <mxGeometry width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-10" value="Data Preprocessing" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-8">
+          <mxGeometry y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-11" value="Model Training" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-8">
+          <mxGeometry y="60" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-12" value="Model Evaluation" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-8">
+          <mxGeometry y="90" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-13" value="Apply Model" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-8">
+          <mxGeometry y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-14" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="60" y="1620" width="120" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-15" value="Data Upload" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-14">
+          <mxGeometry width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-16" value="Data Preprocessing" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-14">
+          <mxGeometry y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-17" value="Model Training" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-14">
+          <mxGeometry y="60" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-18" value="Model Evaluation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-14">
+          <mxGeometry y="90" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-19" value="Apply Model" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-14">
+          <mxGeometry y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-20" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2120" width="760" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-21" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="60" y="2140" width="120" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-22" value="Data Upload" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-21">
+          <mxGeometry width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-23" value="Data Preprocessing" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-21">
+          <mxGeometry y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-24" value="Model Training" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-21">
+          <mxGeometry y="60" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-25" value="Model Evaluation" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-21">
+          <mxGeometry y="90" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-26" value="Apply Model" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="2kNzjl0Pul56ljBtTVwd-21">
+          <mxGeometry y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-27" value="&lt;div&gt;Table of Uploaded Data&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="590" width="420" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-28" value="ADD&lt;br&gt;&lt;span style=&quot;white-space: pre&quot;&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="590" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-29" value="UPDATE" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="590" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="2kNzjl0Pul56ljBtTVwd-29" target="2kNzjl0Pul56ljBtTVwd-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-31" value="DELETE" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="590" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-34" value="start training" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1230" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-35" value="Configuration of Training" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1110" width="420" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-36" value="Traininglogs and Updates" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1320" width="420" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-37" value="continue training" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1290" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-38" value="save model" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1365" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-39" value="load saved model" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1400" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-40" value="pause training" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1260" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-42" value="save configuration" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1110" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2kNzjl0Pul56ljBtTVwd-43" value="load configuration" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1140" width="100" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
