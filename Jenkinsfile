@@ -3,7 +3,9 @@ pipeline {
     agent { docker { image 'python:3.10.4-alpine' } }
     stages {
         stage ('setup') {
-            sh 'apt-get update && apt-get upgrade -y && apt-get install -y git'
+            steps {
+                sh 'apt-get update && apt-get upgrade -y && apt-get install -y git'
+            }
         }
         stage('python tests') {
             steps {
