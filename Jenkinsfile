@@ -1,6 +1,6 @@
 //Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { docker { image 'python:3.10.4-alpine' } }
+    agent { docker { image 'python:latest' } }
     stages {
         // stage ('setup') {
         //     steps {
