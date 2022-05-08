@@ -1,30 +1,10 @@
-
-<h1>Integrate Angular with Flask Python</h1>
-<hr>
- 
-<table id="weather">
-        <tr>
-            <th *ngFor="let column of headers">
-                {{ column }}
-            </th>
-        </tr>
-    
-         <tr *ngFor="let row of weather">
-            <td> 
-                {{row.day}}               
-            </td>
-            <td> 
-              {{row.temperature}}            
-            </td>
-            <td> 
-              {{row.windspeed}}              
-            </td>
-            <td> 
-              {{row.event}}             
-            </td>
-        </tr> 
-    
-</table>  
+<navbar></navbar>
+<home></home>
+<upload></upload>
+<!-- <preprocessing></preprocessing> -->
+<training></training>
+<!-- <evaluation></evaluation>
+<inference></inference> -->
 
 
 <router-outlet></router-outlet>

@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+  .tny_txt_red{
+    color: rgb(255,100,71)   
+}
+  .tny_red{
+    background-color: rgb(255,100,71)   
+}
+.tny_txt_yellow{
+  color: rgb(255,191,74)   
+}
+.tny_yellow{
+  background-color: rgb(255,191,74)
+}
+.tny_txt_blue{
+  color: rgb(74, 207, 255)
+}
+.tny_blue{
+  background-color: rgb(74, 207, 255)
+}
+
+.viewportitem{
+  position: relative;  
+  top: 5em;
+}
