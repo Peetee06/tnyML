@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RestService } from './rest.service';
 import { Weather } from './Weather';
 
@@ -11,6 +11,7 @@ import { Weather } from './Weather';
 export class AppComponent {
   title = 'tnyML';
 
+  scroll: number = 0;
 
   constructor( private rs : RestService){
   }
@@ -27,7 +28,6 @@ readData() {
     this.weather = data;
   })
 }
-
       
 
 }
