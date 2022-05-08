@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('python tests') {
             steps {
-                sh 'pip install -r ./flask/server/requirements.txt'
+                sh 'pip install -r ./flask/server/requirements.txt --user'
                 echo 'pip install successfull'
             }
         }
