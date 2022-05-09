@@ -1,13 +1,17 @@
 //Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent { docker { image 'python:latest' } }
+    environment {
+        VENV_NAME = 'tests'
+        VENV_PATH = env.VENV_NAME + '/bin'
+    }
     stages {
         stage ('set up venv and dependencies') {
             steps {
-                sh 'python -m venv tests'
-                sh '. ./tests/bin/activate'
-                sh 'python -m pip install -r ./flask/server/requirements.txt'
-                echo 'pip install successfull'
+                sh "python -m venv ${VENV_NAME}"
+                sh ". ./${VENV_PATH}activate"
+                sh "${VENV_PATH}/pip install -r ./flask/server/requirements.txt"
+                echo "${VENV_PATH}pip install successfull"
             }
         }
         stage('python tests') {
@@ -17,7 +21,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'python --version'
+                sh "${VENV_PATH}/python --version"
             }
         }
     }
