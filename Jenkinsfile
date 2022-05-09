@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh 'python -m venv tests'
                 sh '. ./tests/bin/activate'
-                sh 'python -m pip install -r ./flask/server/requirements.txt'
+                sh 'python -m pip install -r ./flask/server/requirements.txt --user'
                 echo 'pip install successfull'
             }
         }
