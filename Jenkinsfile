@@ -16,7 +16,7 @@ pipeline {
         }
         stage('python tests') {
             steps {
-                sh ". ./${VENV_PATH}activate && pytest ./flask/server/test"
+                sh ". ./${VENV_PATH}activate && pytest ./flask/server/test --junitxml=./test_xml_report/output.xml"
             }
         }
         stage('build') {
