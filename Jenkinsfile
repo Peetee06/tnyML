@@ -4,15 +4,15 @@ pipeline {
     stages {
         stage ('set up venv and dependencies') {
             steps {
-
-            }
-        }
-        stage('python tests') {
-            steps {
                 sh 'python -m venv tests'
                 sh '. ./tests/bin/activate'
                 sh 'python -m pip install -r ./flask/server/requirements.txt'
                 echo 'pip install successfull'
+            }
+        }
+        stage('python tests') {
+            steps {
+                echo 'running pytests'
             }
         }
         stage('build') {
