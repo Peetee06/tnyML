@@ -16,12 +16,12 @@ pipeline {
         }
         stage('python tests') {
             steps {
-                echo 'running pytests'
+                sh ". ./${VENV_PATH}activate && pytest ./flask/server/test"
             }
         }
         stage('build') {
             steps {
-                sh "${VENV_PATH}/python --version"
+                sh "${VENV_PATH}python --version"
             }
         }
     }
