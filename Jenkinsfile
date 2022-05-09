@@ -11,17 +11,17 @@ pipeline {
                 sh "python -m venv ${VENV_NAME}"
                 sh ". ./${VENV_PATH}activate"
                 sh "${VENV_PATH}pip install -r ./flask/server/requirements.txt --cache-dir ./.pipcache/"
-                echo "${VENV_PATH}pip install successfull"
-            }
-        }
-        stage('python tests') {
-            steps {
-                sh ". ./${VENV_PATH}activate && pytest ./flask/server/test --junitxml=./test_xml_report/output.xml"
+                echo "pip install successfull"
             }
         }
         stage('build') {
             steps {
                 sh "${VENV_PATH}python --version"
+            }
+        }
+        stage('python tests') {
+            steps {
+                sh ". ./${VENV_PATH}activate && pytest ./flask/server/test --junitxml=./test_xml_report/output.xml"
             }
         }
     }
