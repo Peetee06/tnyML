@@ -3,7 +3,7 @@ pipeline {
     agent { docker { image 'python:latest' } }
     environment {
         VENV_NAME = 'tests'
-        VENV_PATH = env.VENV_NAME + '/bin'
+        VENV_PATH = "${VENV_NAME}/bin"
     }
     stages {
         stage ('set up venv and dependencies') {
