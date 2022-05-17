@@ -41,6 +41,7 @@ pipeline {
     post {
         always {
             sh './jenkins/teardown_venv.sh'
+            junit './test_xml_reports/*.xml'
         }
         success {
             setBuildStatus('Build succeeded', 'SUCCESS')
