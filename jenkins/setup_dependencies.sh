@@ -6,4 +6,4 @@ python -m venv ${VENV_NAME}
 source ${VENV_BIN_PATH}activate
 # install dependencies
 #${VENV_BIN_PATH}pip install -r ${WORKSPACE}/flask/server/requirements.txt --cache-dir ${WORKSPACE}/.pipcache/
-${VENV_BIN_PATH}python setup.py
+python ${WORKSPACE}/flask/server/setup.py
