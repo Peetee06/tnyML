@@ -10,7 +10,7 @@ void setBuildStatus(String message, String state) {
 }
 
 pipeline {
-    agent { docker { image 'python:latest' } }
+    agent { docker { image 'python:3.9.12' } }
     environment {
         VENV_NAME = 'tests'
         VENV_PATH = "${WORKSPACE}/${VENV_NAME}"
