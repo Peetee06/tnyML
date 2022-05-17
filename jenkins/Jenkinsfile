@@ -19,7 +19,7 @@ pipeline {
     stages {
         stage ('set up venv and dependencies') {
             steps {
-                sh './jenkins/setup_dependencies.sh'
+                sh "${WORKSPACE}/jenkins/setup_dependencies.sh"
             }
         }
         stage('build') {
@@ -29,19 +29,14 @@ pipeline {
         }
         stage('python tests') {
             steps {
-                sh './jenkins/run_tests.sh'
+                sh "${WORKSPACE}/jenkins/run_tests.sh"
             }
         }
-        //stage('teardown') {
-        //    steps {
-        //        sh './jenkins/teardown_venv.sh'
-        //    }
-        //}
     }
     post {
         always {
-            sh './jenkins/teardown_venv.sh'
-            junit './test_xml_reports/*.xml'
+            junit "${WORKSPACE}/test_xml_reports/*.xml"
+            sh "${WORKSPACE}/jenkins/teardown_venv.sh"
         }
         success {
             setBuildStatus('Build succeeded', 'SUCCESS')
