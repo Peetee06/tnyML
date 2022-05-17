@@ -13,3 +13,7 @@ def make_prediction(input_data: Any) -> Tuple[float, float]:
         test2 = "bcd"
 
     return (prediction, confidence)
+
+
+def preprocess_data(input_data: Any) -> Any:
+    return input_data

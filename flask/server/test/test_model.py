@@ -1,3 +1,4 @@
+from cgi import test
 import pytest
 
 from src import model
@@ -21,3 +22,9 @@ def test_make_prediction(input_data):
     Test for make_prediction
     """
     assert model.make_prediction(input_data) == (0.3, 0.9)
+
+
+def test_preprocess_data():
+    input_data = [1, 2, 3, 4, 5]
+    preprocessed_data = model.preprocess_data(input_data)
+    assert preprocessed_data == input_data
