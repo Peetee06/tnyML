@@ -7,5 +7,6 @@ source ${VENV_BIN_PATH}activate
 # FIXME: for debugging
 which python
 # install dependencies
+${VENV_BIN_PATH}pip install wheel
 #${VENV_BIN_PATH}pip install ${WORKSPACE}/flask/server/ --cache-dir ${WORKSPACE}/.pipcache/
 ${VENV_BIN_PATH}python ${WORKSPACE}/flask/server/setup.py install
