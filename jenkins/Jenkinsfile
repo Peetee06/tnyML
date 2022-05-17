@@ -32,13 +32,16 @@ pipeline {
                 sh './jenkins/run_tests.sh'
             }
         }
-        stage('teardown') {
-            steps {
-                sh './jenkins/teardown_venv.sh'
-            }
-        }
+        //stage('teardown') {
+        //    steps {
+        //        sh './jenkins/teardown_venv.sh'
+        //    }
+        //}
     }
     post {
+        always {
+            sh './jenkins/teardown_venv.sh'
+        }
         success {
             setBuildStatus('Build succeeded', 'SUCCESS')
         }
