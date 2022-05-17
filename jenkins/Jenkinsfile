@@ -33,7 +33,9 @@ pipeline {
             }
         }
         stage('collect test results') {
-            junit "${WORKSPACE}/test_xml_reports/output.xml"
+            steps {
+                junit "${WORKSPACE}/test_xml_reports/output.xml"
+            }
         }
     }
     post {
