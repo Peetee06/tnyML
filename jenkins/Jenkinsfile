@@ -35,6 +35,7 @@ pipeline {
     }
     post {
         always {
+            sh "cat ${WORKSPACE}/test_xml_reports/output.xml"
             junit "${WORKSPACE}/test_xml_reports/*.xml"
             sh "${WORKSPACE}/jenkins/teardown_venv.sh"
         }
