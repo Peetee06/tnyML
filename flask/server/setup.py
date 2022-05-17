@@ -1,6 +1,5 @@
 from setuptools import setup, find_packages
 
-setup(name="tnyml", version="0.0.1", packages=find_packages())
 
 install_requires = [
     "absl-py=1.0.0",
@@ -93,3 +92,10 @@ install_requires = [
     "xlrd=2.0.1",
     "xlwt=1.3.0",
 ]
+
+setup(
+    name="tnyml",
+    version="0.0.1",
+    packages=find_packages(),
+    install_requires=install_requires,
+)
