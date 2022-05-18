@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # create venv
-python -m venv ${VENV_NAME}
+python3 -m venv ${VENV_NAME}
 # activate venv
 source ${VENV_BIN_PATH}activate
 # install wheel
