@@ -26,7 +26,9 @@ export class HomeComponent {
  this.readData();
  console.log(this.number);
 }
-    
+    scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
+}
 readData() {
   this.rs.readWeather().subscribe((data: Weather[]) => {
     this.weather = data;
