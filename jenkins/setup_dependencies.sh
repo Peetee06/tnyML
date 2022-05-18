@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# install python
-sudo apt-get install -y python3.9
-# reload bash config to include python
-source ~/.bashrc
 # create venv
 python -m venv ${VENV_NAME}
 # activate venv
