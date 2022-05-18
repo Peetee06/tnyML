@@ -8,7 +8,7 @@ import { Weather } from './Weather';
 export class RestService {
 
   constructor(private http : HttpClient) { }
-  weatherUrl : string = "http://127.0.0.1:5000/weatherReport/";
+  weatherUrl : string = "http://127.0.0.1:5000/api/getData/";
 
   ngOnInit(){
   }

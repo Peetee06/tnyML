@@ -24,11 +24,11 @@
     <h3 class="mb-3">Step 2</h3>
     <div class="container">
 
-      <h5 class="mb-3">Upload your file to process:</h5>
+       <h5 class="mb-3">Upload your file to process:</h5>
       <div class="input-group mb-4">
-        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-        <button class="btn btn-outline-warning" type="button" id="inputGroupFileAddon04">Upload</button>
-      </div>
+        <input type="file" (change)="onFileSelected($event)" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+        <button class="btn btn-outline-warning" type="button" (click)="onUpload()" id="inputGroupFileAddon04">Upload</button>
+      </div> 
       <button class="btn tny_yellow mb-5" type="button" id="inputGroupFileAddon04" (click)='startTimer()'> >> Start</button>
 
      
