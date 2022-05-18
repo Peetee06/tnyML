@@ -10,5 +10,12 @@
 <body class="full-screen flex-center">
   <h1 class="text-xl">Flask + Firebase</h1>  
   <h3>{{ context.server_time }}</h3>
+
+  <h1>Upload new File</h1>
+    <form action = "http://localhost:5000/uploadfile" method=post enctype=multipart/form-data>
+      <input type="file" accept=".jpg,.png,.jpeg,.bmp" name=file>
+      <input type=submit value=Upload>
+    </form>
+
 </body>
 </html>
