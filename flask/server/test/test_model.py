@@ -1,7 +1,7 @@
 from cgi import test
 import pytest
 
-from tnyml import model
+from src.tnyml import model
 
 # TODO get model instance
 
