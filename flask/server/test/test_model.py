@@ -26,6 +26,6 @@ def test_make_prediction(input_data):
 
 def test_preprocess_data():
     input_data = [1, 2, 3, 4, 5]
-    preprocessed_data = model.preprocess_data(input_data)
-    input_data = input_data.append(1)
+    preprocessed_data = model.preprocess_data(input_data.copy())
+    input_data.append(1)
     assert preprocessed_data == input_data
