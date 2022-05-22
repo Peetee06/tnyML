@@ -1,0 +1,37 @@
+//Jenkinsfile (Declarative Pipeline)
+void setBuildStatus(String message, String state) {
+    step([
+      $class: 'GitHubCommitStatusSetter',
+      reposSource: [$class: 'ManuallyEnteredRepositorySource', url: 'https://github.com/Peetee06/web_engineering_hsbo_SS2022.git'],
+      contextSource: [$class: 'ManuallyEnteredCommitContextSource', context: 'ci/jenkins/build-status'],
+      errorHandlers: [[$class: 'ChangingBuildStatusErrorHandler', result: 'UNSTABLE']],
+      statusResultSource: [ $class: 'ConditionalStatusResultSource', results: [[$class: 'AnyBuildResult', message: message, state: state]] ]
+  ])
+}
+
+pipeline {
+    agent { label 'ubuntu-2004' }
+    environment {
+        JENKINS_PATH = "${WORKSPACE}/tnyML/jenkins"
+    }
+    stages {
+        stage ('set up dependencies') {
+            steps {
+                sh "${JENKINS_PATH}/setup_dependencies.sh"
+            }
+        }
+        stage('run tests') {
+            steps {
+                sh "${JENKINS_PATH}/run_tests.sh"
+            }
+        }
+    }
+    post {
+        success {
+            setBuildStatus('Build succeeded', 'SUCCESS')
+        }
+        failure {
+            setBuildStatus('Build failed', 'FAILURE')
+        }
+    }
+}
