@@ -19,7 +19,7 @@ pipeline {
     stages {
         stage ('set up venv and dependencies') {
             steps {
-                sh "${WORKSPACE}/jenkins/setup_dependencies.sh"
+                sh "${WORKSPACE}/flask/jenkins/setup_dependencies.sh"
             }
         }
         stage('build') {
@@ -30,7 +30,7 @@ pipeline {
         }
         stage('python tests') {
             steps {
-                sh "${WORKSPACE}/jenkins/run_tests.sh"
+                sh "${WORKSPACE}/flask/jenkins/run_tests.sh"
             }
         }
         stage('collect test results') {
@@ -42,7 +42,7 @@ pipeline {
     post {
         always {
             // TODO: don't need to teardown as google cloud does so itself'
-            sh "${WORKSPACE}/jenkins/teardown_venv.sh"
+            sh "${WORKSPACE}/flask/jenkins/teardown_venv.sh"
         }
         success {
             setBuildStatus('Build succeeded', 'SUCCESS')
