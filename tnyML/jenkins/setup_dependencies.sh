@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo snap install node --classic
-find -name "*npm*" /var/lib/snapd/snaps
+sudo find /var/lib/snapd/snaps -name "*npm*"
 sudo apt-get install -y npm
 cd ${WORKSPACE}/tnyML
 sudo npm install
