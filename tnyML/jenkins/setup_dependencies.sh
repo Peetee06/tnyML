@@ -1,8 +1,7 @@
 #!/bin/bash
 
-sudo snap install node --classic
-sudo find /var/lib/snapd/snaps -name "*npm*"
-sudo apt-get install -y npm
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
 cd ${WORKSPACE}/tnyML
 sudo npm install
 sudo npm install -g @angular/cli
