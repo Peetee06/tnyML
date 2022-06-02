@@ -42,7 +42,7 @@ pipeline {
     post {
         always {
             // TODO: don't need to teardown as google cloud does so itself'
-            sh "${WORKSPACE}/flask/jenkins/teardown_venv.sh"
+            // sh "${WORKSPACE}/flask/jenkins/teardown_venv.sh"
         }
         success {
             setBuildStatus('Build succeeded', 'SUCCESS')
