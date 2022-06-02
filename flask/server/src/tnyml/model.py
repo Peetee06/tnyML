@@ -1,5 +1,8 @@
 from typing import Any, Tuple
 
+# TODO: create model class
+# TODO: has attribute modeldata
+
 
 def make_prediction(input_data: Any) -> Tuple[float, float]:
     # TODO create ludwig handler
@@ -17,3 +20,8 @@ def make_prediction(input_data: Any) -> Tuple[float, float]:
 
 def preprocess_data(input_data: Any) -> Any:
     return input_data
+
+def get_models():
+    # TODO: search flask/server/models
+    # TODO: return list of models
+    return "models"
