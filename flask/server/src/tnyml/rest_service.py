@@ -13,7 +13,7 @@ from ludwig_handler import LudwigHandler
 # FIXME: remove numpy when image retrieval is implemented
 import numpy as np
 
-UPLOAD_FOLDER = "flask/server/src/tnyml/public/user/uploads/"
+UPLOAD_FOLDER = "flask/server/public/user/uploads/"
 ALLOWED_EXTENSIONS = {"jpg", "jpeg"}
 
 app = Flask(__name__)
