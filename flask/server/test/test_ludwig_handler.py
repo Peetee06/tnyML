@@ -1,17 +1,29 @@
 from cgi import test
 import pytest
 
-from src.tnyml.ludwig_handler import LudwigHandler
+from tnyml.ludwig_handler import LudwigHandler
 import numpy as np
+from pathlib import Path
 
-# TODO get model instance
 
 @pytest.fixture
 def init_model():
-    return LudwigHandler("testmodel")
+    return LudwigHandler("cat_dog_model")
+
 
 def test_predict(init_model):
-    image = np.zeros((3,3))
-    prediction = init_model.predict(image)
-    assert (prediction.prediction == "CAT"
-            and prediction.confidence == 0.9)
+    image_url = "https://tnyml.app/resources/server/public/user/uploads/Uploads_cat_dog/image_to_predict.jpg"
+    prediction = init_model.predict(image_url)
+    assert prediction.prediction == "cat"
+    assert prediction.confidence == 0.998
+
+
+# TODO move this test to flask testing
+# def test_rest_service_predict():
+#    prediction = predict("cat_dog_model")
+#
+#    expected_prediction = { "prediction" : "cat",
+#                            "confidence" : 0.53
+#    }
+#
+#    assert(prediction != expected_prediction)
