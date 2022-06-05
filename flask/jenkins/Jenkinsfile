@@ -25,7 +25,6 @@ pipeline {
         stage('build') {
             steps {
                 sh "${VENV_BIN_PATH}python --version"
-                // TODO: code style check (linting)
             }
         }
         stage('python tests') {
