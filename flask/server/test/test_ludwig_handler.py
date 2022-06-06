@@ -12,8 +12,8 @@ def init_model():
 
 
 def test_predict(init_model):
-    image_url = "https://tnyml.app/resources/server/public/user/uploads/Uploads_cat_dog/image_to_predict.jpg"
-    prediction = init_model.predict(image_url)
+    image_path = Path(__file__).parent.parent / "public" / "user" / "uploads" / "Uploads_cat_dog" / "image_to_predict.jpg"
+    prediction = init_model.predict(image_path)
     assert prediction.prediction == "cat"
     assert prediction.confidence == 0.998
 
