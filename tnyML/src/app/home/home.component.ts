@@ -2,6 +2,8 @@ import { Component, HostListener, Input, Output } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { RestService } from '../rest.service';
 import { ModelData } from '../ModelData';
+import { ModelInference } from '../ModelInference';
+
 
 @Component({
   selector: 'home',
@@ -14,8 +16,10 @@ export class HomeComponent {
   htmlelement: HTMLElement;
   selectedFile : File = null;
   fileuploaded : boolean = false;
+  hideWelcome : boolean = false;
   started : boolean = false;
   imageToShow: any;
+  result : ModelInference;
 
 
   constructor(public rs: RestService) {
@@ -25,10 +29,8 @@ export class HomeComponent {
     this.getModels();
   }
   scroll(element: string) {
-
-    this.htmlelement = document.getElementById(element);
-    this.started = true;
-    this.htmlelement.scrollIntoView({ behavior: 'smooth' });
+   this.hideWelcome = true;
+  setTimeout(()=> {this.started = true}, 1000)
   }
 
   public getModels() {
@@ -48,19 +50,25 @@ export class HomeComponent {
   }
 
   onUpload(){
-
+    this.imageToShow = null;
     const fd = new FormData;
     fd.append('file', this.selectedFile, this.selectedFile.name);
     this.rs.uploadFile(fd);
- 
+    
   }
 
   showImage(){
-    this.rs.downloadFile(this.selectedFile.name).subscribe((img : Blob) => 
-    {
-      this.createImageFromBlob(img);
-    });
     
+     this.rs.downloadFile(this.selectedFile.name).subscribe((img : Blob) => 
+     {
+       this.createImageFromBlob(img);
+     });
+    this.rs.startRecognition(this.selectedModelDescr,this.selectedFile.name) 
+    .subscribe((data : ModelInference) => {
+      this.result = data;
+      console.log(data)
+    });
+
   }
   createImageFromBlob(image: Blob) {
     let reader = new FileReader();
