@@ -1,0 +1,51 @@
+{
+    "checksum": "FWj5GZbAn6NnhAZ6KigJ7w==",
+    "data_train_hdf5_fp": "cat_dog_all_train.training.hdf5",
+    "dataset_src": "cat_dog_all_train.csv",
+    "image_path": {
+        "preprocessing": {
+            "height": 32,
+            "in_memory": true,
+            "infer_image_dimensions": true,
+            "infer_image_max_height": 256,
+            "infer_image_max_width": 256,
+            "infer_image_num_channels": true,
+            "infer_image_sample_size": 100,
+            "missing_value_strategy": "backfill",
+            "num_channels": 3,
+            "num_processes": 1,
+            "resize_method": "interpolate",
+            "scaling": "pixel_normalization",
+            "width": 32
+        },
+        "reshape": [
+            3,
+            32,
+            32
+        ]
+    },
+    "label": {
+        "idx2str": [
+            "<UNK>",
+            "cat",
+            "dog"
+        ],
+        "preprocessing": {
+            "fill_value": "<UNK>",
+            "lowercase": false,
+            "missing_value_strategy": "drop_row",
+            "most_common": 10000
+        },
+        "str2freq": {
+            "<UNK>": 0,
+            "cat": 5000,
+            "dog": 5000
+        },
+        "str2idx": {
+            "<UNK>": 0,
+            "cat": 1,
+            "dog": 2
+        },
+        "vocab_size": 3
+    }
+}

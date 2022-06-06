@@ -1,0 +1,51 @@
+{
+    "checksum": "d2WdyhO9SgB3ynJUX4o_dg==",
+    "data_train_hdf5_fp": "car_truck_all_train.training.hdf5",
+    "dataset_src": "car_truck_all_train.csv",
+    "image_path": {
+        "preprocessing": {
+            "height": 32,
+            "in_memory": true,
+            "infer_image_dimensions": true,
+            "infer_image_max_height": 256,
+            "infer_image_max_width": 256,
+            "infer_image_num_channels": true,
+            "infer_image_sample_size": 100,
+            "missing_value_strategy": "backfill",
+            "num_channels": 3,
+            "num_processes": 1,
+            "resize_method": "interpolate",
+            "scaling": "pixel_normalization",
+            "width": 32
+        },
+        "reshape": [
+            3,
+            32,
+            32
+        ]
+    },
+    "label": {
+        "idx2str": [
+            "<UNK>",
+            "car",
+            "truck"
+        ],
+        "preprocessing": {
+            "fill_value": "<UNK>",
+            "lowercase": false,
+            "missing_value_strategy": "drop_row",
+            "most_common": 10000
+        },
+        "str2freq": {
+            "<UNK>": 0,
+            "car": 5000,
+            "truck": 5000
+        },
+        "str2idx": {
+            "<UNK>": 0,
+            "car": 1,
+            "truck": 2
+        },
+        "vocab_size": 3
+    }
+}
