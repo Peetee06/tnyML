@@ -1,0 +1,30 @@
+export PROJECT=$(gcloud info --format='value(config.project)')
+cat > jenkins-agent.json <<EOF
+{
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "$PROJECT",
+      "source_image_family": "ubuntu-2004-lts",
+      "source_image_project_id": "ubuntu-os-cloud",
+      "zone": "europe-west3-c",
+      "disk_size": "50",
+      "image_name": "jenkins-agent-{{timestamp}}",
+      "image_family": "jenkins-agent",
+      "ssh_username": "ubuntu"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": ["curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -\
+                && sudo apt-get update\
+                && sudo apt-get install -y openjdk-8-jdk nodejs python3 python3-dev python3-venv wget\
+                && wget https://bootstrap.pypa.io/get-pip.py\
+                && sudo python3 get-pip.py\
+                && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb\
+                && sudo apt-get install -y ./google-chrome-stable_current_amd64.deb"]
+    }
+  ]
+}
+EOF

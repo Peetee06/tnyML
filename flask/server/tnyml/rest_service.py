@@ -19,13 +19,13 @@ from pathlib import Path
 
 import model
 
-UPLOAD_FOLDER = Path(__file__).parent.parent / "public" / "user" / "uploads"
+UPLOAD_FOLDER = Path(__file__).parent / "public" / "user" / "uploads"
 ALLOWED_EXTENSIONS = {"jpg", "jpeg"}
 
 app = Flask(__name__)
 
 # allow origin 4200 to access everything inside /api/
-cors = CORS(app, resources={r"/api/*": {"origins": "http://localhost:4200"}})
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 # all around data upload
@@ -98,11 +98,12 @@ def predict(model_name):
 
     image_path = app.config["UPLOAD_FOLDER"] / image_filename
 
-    prediction = model.make_prediction(model_name, image_path)    
+    prediction = model.make_prediction(model_name, image_path)
 
     response = jsonify(prediction.__dict__)
     return response
     # TODO: if wanted model_name does not exist return 404 not found or sth
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=int(os.environ.get("PORT", 5000)))

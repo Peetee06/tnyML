@@ -1,0 +1,5 @@
+FROM python:3.8.13
+COPY . /tnyML-app
+WORKDIR /tnyML-app
+RUN pip install -r flask/server/requirements.txt
+CMD [ "python", "flask/server/src/rest_service.py" ]

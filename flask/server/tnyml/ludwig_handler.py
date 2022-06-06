@@ -7,7 +7,7 @@ from prediction import Prediction
 
 
 class LudwigHandler(object):
-    MODEL_DIR: Path = Path(__file__).parent.parent / "models"
+    MODEL_DIR: Path = Path(__file__).parent / "models"
 
     def __init__(self, model_name: str):
         self.model_dir: Path = self.MODEL_DIR / model_name

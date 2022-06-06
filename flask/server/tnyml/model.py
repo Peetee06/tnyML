@@ -17,7 +17,7 @@ def make_prediction(model_name: str, image_path: pathlib.Path) -> Prediction:
 
 def get_models():
     # path to directory that contains the trained models
-    models_path = pathlib.Path(__file__).parent.parent / "models"
+    models_path = pathlib.Path(__file__).parent / "models"
     # list containing names of trained models
     models = [dir.stem for dir in models_path.iterdir() if dir.is_dir()]
     return models
