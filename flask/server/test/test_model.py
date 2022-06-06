@@ -22,4 +22,4 @@ def test_make_prediction():
     model_name = "cat_dog_model"
     prediction = model.make_prediction(model_name, image_path)
     assert prediction.prediction == "cat"
-    assert abs(prediction.confidence - 0.918) <= 0.01
+    assert abs(prediction.confidence - 0.998) <= 0.01
