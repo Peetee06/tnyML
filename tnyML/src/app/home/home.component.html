@@ -1,15 +1,15 @@
-<div id="home" class="col-lg-9 mx-auto p-3 py-5 md-5" style="max-width: 700px; ">
+<div id="home" class="col-lg-9 mx-auto p-3 py-5 md-5" style="max-width: 800px; ">
 
-  <div class="fade-in-fwd mb-5">
-    <img src="assets/img/tnyml.png" class="img-fluid mb-3" alt="...">
-    <h1 class="text-center tny_txt_red">MAKING MACHINE LEARNING ACCESSIBLE</h1>
+  <div class="text-center slide-in-blurred-top mb-4">
+    <img src="assets/img/tnyml-s.png" class="img-fluid mx-auto w-75 mb-3" alt="...">
+    <h2 class="text-center tny_txt_red">MAKING MACHINE LEARNING ACCESSIBLE</h2>
 
   </div>
 
-  <div *ngIf="!started" [ngClass]="hideWelcome? 'p-4 mb-4 bg-light rounded-3 slide-out-blurred-top' : 'p-4 mb-4 bg-light rounded-3'">
-    <div class="container-fluid py-5">
-      <h1 class="display-5 fw-bold mb-3">Welcome to tnyML</h1>
-      <p class="col-md-8 fs-4">Optimize your Business with Machine Learning easier than ever. </p>
+  <div *ngIf="!started" [ngClass]="hideWelcome? 'p-4 mb-4 bg-light rounded-3 slide-out-blurred-top' : 'p-4 mb-4 bg-light  slide-in-blurred-top rounded-3'">
+    <div class="container-fluid slide-in-blurred-top py-3">
+      <h1 class="display-6 fw-bold mb-3">Welcome to tnyML</h1>
+      <p class="col-md-9 fs-4">Optimize your Business with Machine Learning easier than ever. </p>
       <hr class="mt-4">
       <button class="btn tny_yellow btn-lg mt-3" type="button" (click)="scroll('getstarted')">Get started!</button>
     </div>
@@ -70,8 +70,8 @@
     <h5 class="mb-3">Find out what tnyML recognized in your file:</h5>
       <button class="btn tny_yellow mb-5" type="button" id="inputGroupFileAddon04" (click)="showImage()"> >> Start</button> 
 
-      <img *ngIf="imageToShow" [src]="imageToShow"  class="card-img-top mb-3" alt="...">
-      <h5 *ngIf="imageToShow" class="mb-5">tnyML is {{ result.confidence*100 }}% sure that your uploaded image contains a {{result.prediction}}. </h5>
+      <img *ngIf="imageToShow" [src]="imageToShow"  class="card-img-top fade-in-fwd mb-3" alt="...">
+      <h5 *ngIf="imageToShow" class="fade-in-fwd mb-5">tnyML is {{ result.confidence*100 }}% sure that your uploaded image contains a {{result.prediction}}. </h5>
 
   </div>
 </div>
