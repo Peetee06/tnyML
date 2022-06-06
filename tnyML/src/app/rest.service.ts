@@ -16,13 +16,14 @@ export class RestService {
   modelURI : string = "models";
   fileuploadPath: string ="uploadfile"
   filedownload: string ="getfile/"
+  modelpath: string ="models/"
 
   ngOnInit(){
   }
 
   getModels()
   {
-    return this.http.get<ModelData[]>(this.backendApi+this.modelURI);
+    return this.http.get<string[]>(this.backendApi+this.modelURI);
   }
 
 
@@ -46,6 +47,12 @@ export class RestService {
             this.uploadProgress = Math.round(100 * (event.loaded / event.total));
           }
         })
+  }
+
+  startRecognition(model_name : string, image_url_as_json : string ){
+    this.http.post(this.backendApi+this.modelpath+model_name,image_url_as_json, {
+      responseType : 'string'
+    })
   }
 
   reset() {

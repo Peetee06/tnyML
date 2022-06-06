@@ -9,8 +9,8 @@ import { ModelData } from '../ModelData';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  models: ModelData[] = [];
-  selectedModelId: number;
+  models: string[] = [];
+  selectedModelDescr: string;
   htmlelement: HTMLElement;
   selectedFile : File = null;
   fileuploaded : boolean = false;
@@ -32,12 +32,13 @@ export class HomeComponent {
   }
 
   public getModels() {
-    this.rs.getModels().subscribe((data: ModelData[]) => {
+    this.rs.getModels().subscribe((data: string[]) => {
       this.models = data;
+      console.log(this.models[0]);
     })
   }
-  selectedModel(modelId : number){
-    this.selectedModelId = modelId;
+  selectedModel(modelId : string){
+    this.selectedModelDescr = modelId;
     console.log(modelId);
     //this.scroll("upload");
   }

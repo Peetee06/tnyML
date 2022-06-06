@@ -10,7 +10,7 @@
       <h1 class="display-5 fw-bold mb-3">Welcome to tnyML</h1>
       <p class="col-md-8 fs-4">Optimize your Business with Machine Learning easier than ever. </p>
       <hr class="mt-4">
-      <button class="btn tny_yellow btn-lg mt-3" type="button" (click)="scroll('getstarted')">Get started!</button>
+      <button class="btn tny_yellow btn-lg mt-3 slide-in-blurred-top" type="button" (click)="scroll('getstarted')">Get started!</button>
     </div>
   </div>
 </div>
@@ -23,10 +23,10 @@
   <div class="container mb-5">
     <h5 class="mb-3">Choose one of our pre-trained Models:</h5>
     <div *ngFor="let model of models" class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="{{model.model_id}}"
-        (click)="selectedModel(model.model_id)">
-      <label class="form-check-label mb-2" for="{{model.model_id}}" (click)="selectedModel(model.model_id)">
-        {{ model.description }}
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="{{model}}"
+        (click)="selectedModel(model)">
+      <label class="form-check-label mb-2" for="{{model}}" (click)="selectedModel(model)">
+        {{ model }}
       </label>
     </div>
   </div>
@@ -35,7 +35,7 @@
 <!-- Upload Image Section -->
 <div id="upload" style=" position: relative; top: -4em"></div>
 
-<div *ngIf="selectedModelId != null" class="container slide-in-blurred-top mb-5" style="max-width: 700px;">
+<div *ngIf="selectedModelDescr != null" class="container slide-in-blurred-top mb-5" style="max-width: 700px;">
   <h3 class="mb-3">Step 2</h3>
   <div class="container mb-5">
 
