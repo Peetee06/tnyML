@@ -13,27 +13,21 @@ class LudwigHandler(object):
         self.model_dir: Path = self.MODEL_DIR / model_name
         self.model = LudwigModel.load(str(self.model_dir))
 
-    def predict(self, image_url) -> Prediction:
+    def predict(self, image_path) -> Prediction:
         """makes a prediction for the given image
 
         Args:
-            image_url(str): full path of image to predict
+            image_path(Path): full path of image to predict
 
         Returns:
             Prediction: A Prediction object containing the prediction and
                         confidence for given image
         """
 
-        # gives relative path to image from server directory level
-        relative_image_path = image_url.split("/resources/")[-1]
-
-        # parent.parent.parent results in full path to server parent directory
-        image_path = Path(__file__).parent.parent.parent / relative_image_path
-
         # path to image to predict
-        image_path_to_predict = {"image_path": [str(image_path)]}
+        images_to_predict = {"image_path": [str(image_path)]}
 
-        all_predictions, _ = self.model.predict(dataset=image_path_to_predict)
+        all_predictions, _ = self.model.predict(dataset=images_to_predict)
 
         predicted_class = all_predictions.at[  # type: ignore
             0, "label_predictions"

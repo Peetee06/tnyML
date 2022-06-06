@@ -19,7 +19,7 @@ from pathlib import Path
 
 import model
 
-UPLOAD_FOLDER = "flask/server/public/user/uploads/"
+UPLOAD_FOLDER = Path(__file__).parent.parent / "public" / "user" / "uploads"
 ALLOWED_EXTENSIONS = {"jpg", "jpeg"}
 
 app = Flask(__name__)
@@ -52,7 +52,7 @@ def uploadFile():
         return resp
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)  # type: ignore
-        image_path = Path(app.config["UPLOAD_FOLDER"]) / filename
+        image_path = app.config["UPLOAD_FOLDER"] / filename
         file.save(image_path)
         resp = jsonify({"image_url": f"/api/getfile/{filename}"})
         resp.status_code = 201
@@ -69,7 +69,7 @@ def uploadFile():
 @app.route("/api/getfile/<filename>", methods=["GET"])
 @cross_origin(supports_credentials=True)
 def getFile(filename):
-    image_path = Path(app.config["UPLOAD_FOLDER"]) / filename
+    image_path = app.config["UPLOAD_FOLDER"] / filename
     return send_file(image_path)
 
 
@@ -93,8 +93,12 @@ def getData():
 @app.route("/api/models/<model_name>", methods=["POST"])
 def predict(model_name):
     image_url = dict(request.json)["url"]  # type: ignore
+    # extract filename
+    image_filename = image_url.split("/getfile/")[-1]
 
-    prediction = model.make_prediction(model_name, image_url)    
+    image_path = app.config["UPLOAD_FOLDER"] / image_filename
+
+    prediction = model.make_prediction(model_name, image_path)    
 
     response = jsonify(prediction.__dict__)
     return response
