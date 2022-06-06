@@ -1,6 +1,5 @@
 from cgi import test
 from pathlib import Path
-import pytest
 
 from tnyml import model
 
