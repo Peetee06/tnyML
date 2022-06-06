@@ -6,11 +6,11 @@ from prediction import Prediction
 # TODO: create model class
 
 
-def make_prediction(model_name: str, image_url: str) -> Prediction:
+def make_prediction(model_name: str, image_path: pathlib.Path) -> Prediction:
 
     current_model = LudwigHandler(model_name)
 
-    prediction = current_model.predict(image_url)
+    prediction = current_model.predict(image_path)
 
     return prediction
 
