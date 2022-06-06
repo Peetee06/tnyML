@@ -15,7 +15,7 @@ def test_predict(init_model):
     image_path = Path(__file__).parent.parent / "public" / "user" / "uploads" / "Uploads_cat_dog" / "image_to_predict.jpg"
     prediction = init_model.predict(image_path)
     assert prediction.prediction == "cat"
-    assert prediction.confidence == 0.998
+    assert (abs(prediction.confidence - 0.998) <= 0.01)
 
 
 # TODO move this test to flask testing
