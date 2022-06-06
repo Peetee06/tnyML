@@ -71,7 +71,7 @@
       <button class="btn tny_yellow mb-5" type="button" id="inputGroupFileAddon04" (click)="showImage()"> >> Start</button> 
 
       <img *ngIf="imageToShow" [src]="imageToShow"  class="card-img-top mb-3" alt="...">
-      <h5 class="mb-5">tnyML is {{ result.confidence*100 }}% sure that your uploaded image contains a {{result.prediction}}. </h5>
+      <h5 *ngIf="imageToShow" class="mb-5">tnyML is {{ result.confidence*100 }}% sure that your uploaded image contains a {{result.prediction}}. </h5>
 
   </div>
 </div>

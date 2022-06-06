@@ -26,6 +26,7 @@ export class HomeComponent {
   }
 
   ngOnInit() {
+    this.result = new ModelInference(0, "");
     this.getModels();
   }
   scroll(element: string) {

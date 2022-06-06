@@ -28,8 +28,8 @@ export class RestService {
 
 
   downloadFile(filename: string): Observable<Blob> {
-    return this.http.get(this.backendApi + this.filedownload + filename, { responseType: 'blob' });
-    //   return this.http.get(this.backendApi+this.filedownload+filename);
+    return this.http.get(this.backendApi + this.filedownload + filename, {
+      responseType: 'blob' });
   }
 
 

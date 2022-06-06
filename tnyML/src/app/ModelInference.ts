@@ -1,6 +1,6 @@
 export class ModelInference {
     confidence: number;
-    prediction: string
+    prediction: string;
 
     constructor(
         confidence: number,
