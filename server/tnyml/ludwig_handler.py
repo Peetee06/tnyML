@@ -34,7 +34,7 @@ class LudwigHandler(object):
         ]
 
         prediction_confidence = round(
-            all_predictions.at[0, "label_probability"], 3  # type: ignore
+            float(all_predictions.at[0, "label_probability"]), 3  # type: ignore
         )
 
         prediction = Prediction(predicted_class, prediction_confidence)
