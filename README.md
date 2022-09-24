@@ -8,4 +8,12 @@ This Web App implements a machine learning workflow for uploading and preprocess
 For License information check [LICENSE](https://github.com/Peetee06/web_engineering_hsbo_SS2022/blob/main/LICENSE).  
   
 ## The Wireframe of the App
-![ML App Wireframe](https://github.com/Peetee06/web_engineering_hsbo_SS2022/blob/main/Wireframe_WE.drawio.png?raw=true)
+![ML App Wireframe Data Upload](https://github.com/Peetee06/web_engineering_hsbo_SS2022/blob/main/wireframes/Wireframe_WE-Data%20Upload.drawio.png?raw=true)
+
+![ML App Wireframe Data Preprocessing](https://github.com/Peetee06/web_engineering_hsbo_SS2022/blob/main/wireframes/Wireframe_WE-Data%20Preprocessing.drawio.png?raw=true)
+
+![ML App Wireframe Model Training](https://github.com/Peetee06/web_engineering_hsbo_SS2022/blob/main/wireframes/Wireframe_WE-Model%20Training.drawio.png?raw=true)
+
+![ML App Wireframe Model Evaluation](https://github.com/Peetee06/web_engineering_hsbo_SS2022/blob/main/wireframes/Wireframe_WE-Model%20Evaluation.drawio.png?raw=true)
+
+![ML App Wireframe Inference](https://github.com/Peetee06/web_engineering_hsbo_SS2022/blob/main/wireframes/Wireframe_WE-Inference.drawio.png?raw=true)
