@@ -2,5 +2,3 @@ __pycache__
 *.egg-info
 models
 public
-**/.coverage
-**/coverage.*
