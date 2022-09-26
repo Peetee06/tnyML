@@ -1,3 +1,6 @@
 ludwig>=0.5<0.6
 Flask
+flask-cors
 pandas
+connexion[swagger-ui]
+-e .
