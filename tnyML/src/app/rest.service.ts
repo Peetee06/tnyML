@@ -13,10 +13,10 @@ export class RestService {
   uploadedSuccess: boolean = false;
 
   constructor(private http: HttpClient) { }
-  backendApi: string = "http://127.0.0.1:5000/api/";
-  modelURI: string = "models";
-  fileuploadPath: string = "uploadfile"
-  filedownload: string = "getfile/"
+  backendApi: string = "http://127.0.0.1:5001/api/";
+  modelURI: string = "models/";
+  fileuploadPath: string = "files/"
+  filedownload: string = "files/"
   modelpath: string = "models/"
 
   ngOnInit() {
@@ -50,7 +50,7 @@ export class RestService {
   }
 
   startRecognition(model_name: string, image_url: string) : Observable<ModelInference>{
-    image_url = '{ "url": "http://127.0.0.1:5000/api/getfile/' + image_url + '"}';
+    image_url = '{ "url": "http://127.0.0.1:5001/api/files/' + image_url + '"}';
     var image_json = JSON.parse(image_url)
     return this.http.post<ModelInference>(this.backendApi + this.modelpath + model_name, image_json)
 

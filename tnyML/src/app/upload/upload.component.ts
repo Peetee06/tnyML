@@ -21,7 +21,7 @@ constructor(private http: HttpClient) {}
   onUpload(){
     const fd = new FormData;
     fd.append('file', this.selectedFile, this.selectedFile.name);
-     this.http.post('http://127.0.0.1:5000/api/uploadfile', fd)
+     this.http.post('http://127.0.0.1:5001/api/uploadfile', fd)
      .subscribe(response => console.log(response))
 
   }
