@@ -8,10 +8,13 @@ app.add_api(
     "api_specification.yaml", strict_validation=True, validate_responses=True
 )
 
+flask_app = app.app
+
 # allow origin 4200 to access everything inside /api/
-cors = CORS(
-    app.app, resources={r"/api/*": {"origins": "http://localhost:4200"}}
-)
+CORS(flask_app)
+# cors = CORS(
+#     flask_app, resources={r"/api/*": {"origins": "http://localhost:4200"}}
+# )
 
 
 def format_server_time():

@@ -1,12 +1,13 @@
 import flask
 
-from config.config import get_upload_folder, get_allowed_extensions
+from config import config
 
 
 def allowed_file(filename):
     return (
         "." in filename
-        and filename.rsplit(".", 1)[1].lower() in get_allowed_extensions()
+        and filename.rsplit(".", 1)[1].lower()
+        in config.get_allowed_extensions()
     )
 
 
@@ -21,25 +22,24 @@ def upload_file():
     else:
         filename = str(file.filename)
     if allowed_file(file.filename):
-        hashed_filename = str(hex(hash(filename.split(".")[0]))) + ".jpg"
-        image_path = get_upload_folder() / hashed_filename
+        image_path = config.get_upload_folder() / filename
         try:
             file.save(image_path)
         except FileNotFoundError as e:
             print(e)
             flask.abort(500, "File could not be saved")
-        return {"image_url": f"/api/files/{hashed_filename}"}
+        return {"image_url": f"/api/files/{filename}"}
     else:
         flask.abort(
             400,
             description=(
                 "File extension not allowed. "
-                f"Allowed extensions are: {get_allowed_extensions()}"
+                f"Allowed extensions are: {config.get_allowed_extensions()}"
             ),
         )
 
 
 def get_file(file_name):
     # TODO: 404 if file does not exist
-    image_path = get_upload_folder() / file_name
-    return flask.send_file(image_path)
+    image_path = config.get_upload_folder()
+    return flask.send_from_directory(image_path, file_name)
