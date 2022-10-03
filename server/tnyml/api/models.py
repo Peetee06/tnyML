@@ -1,4 +1,3 @@
-from genericpath import isfile
 from pathlib import Path
 import flask
 from werkzeug.utils import secure_filename
@@ -17,7 +16,10 @@ def predict(model_name):
     if model_name not in models:
         flask.abort(
             404,
-            description=f"Model with name {model_name} not found. Please use one of the following models: {models}",
+            description=(
+                f"Model with name {model_name} not found. "
+                f"Please use one of the following models: {models}"
+            ),
         )
 
     request_body: dict = dict(flask.request.json)  # type: ignore

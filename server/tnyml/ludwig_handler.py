@@ -16,7 +16,7 @@ class LudwigHandler:
 
     MODEL_DIR: Path = Path(__file__).parent.parent / "models"
     """The path to the pre-trained Ludwig models
-    
+
         :meta hide-value:
     """
 
@@ -44,7 +44,8 @@ class LudwigHandler:
             image_path (Path): Full path of image to predict.
 
         Returns:
-            Prediction: A Prediction object containing the prediction and confidence for given image.
+            Prediction: A Prediction object containing the prediction
+            and confidence for given image.
         """
 
         # path to the image to predict

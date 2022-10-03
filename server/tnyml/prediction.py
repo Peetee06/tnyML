@@ -1,4 +1,4 @@
-class Prediction(object):
+class Prediction:
     """A class to represent a prediction.
 
     Attributes:
@@ -25,7 +25,8 @@ class Prediction(object):
             other (Prediction): The other Prediction object.
 
         Returns:
-            bool: Returns True if the two Prediction objects have the same prediction label and confidence (i.e. are equal), False otherwise.
+            bool: Returns True if the two Prediction objects have the same
+            prediction label and confidence (i.e. are equal), False otherwise.
         """
         return (
             self.prediction == other.prediction

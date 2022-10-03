@@ -32,7 +32,10 @@ def upload_file():
     else:
         flask.abort(
             400,
-            description=f"File extension not allowed. Allowed extensions are: {get_allowed_extensions()}",
+            description=(
+                "File extension not allowed. "
+                f"Allowed extensions are: {get_allowed_extensions()}"
+            ),
         )
 
 

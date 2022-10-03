@@ -1,5 +1,4 @@
 import time
-import os
 import connexion
 from flask import render_template
 from flask_cors import CORS
