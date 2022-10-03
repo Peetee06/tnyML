@@ -1,6 +1,9 @@
 [tool.pytest.ini_options]
 minversion = "7.1"
-addopts = ["--last-failed", "--failed-first", "--new-first", "--maxfail=2", "--color=yes", "--cov-report=term", "--cov-report=html", "--cov-report=xml", "--cov-branch", "--cov=server"]
+addopts = ["--last-failed", "--failed-first", "--new-first", "--maxfail=2", "--cov-report=term", "--cov-report=html", "--cov-report=xml", "--cov-branch", "--cov=tnyml"]
 testpaths = ["test"]
 required_plugins = ["pytest-cov", "pytest-mock"]
 filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.coverage.run]
+omit = ["test/*"]
