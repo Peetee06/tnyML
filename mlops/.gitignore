@@ -1,2 +1,6 @@
 data/*
 mlruns
+**.hdf5
+.lock_preprocessing
+**.meta.json
+config/*
