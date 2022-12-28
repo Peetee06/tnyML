@@ -18,11 +18,21 @@ entry_points:
       input_path: {type: path, default: "data/extracted/train"}
       output_path: {type: path, default: "data/prepared"}
     command: "python src/prepare_data.py --input_path {input_path} --output_path {output_path}"
+  preprocess_data:
+    parameters:
+      data_path: {type: path, default: "data/raw/titanic/train.csv"}
+      output_path: {type: path, default: "data/preprocessed"}
+    command: "python src/preprocess_data.py --data_path {data_path} --output_path {output_path}"
   train:
     parameters:
-      data_path: {type: path, default: "data/prepared/train.csv"}
+      data_path: {type: path, default: "data/prepared/dogs-vs-cats/train.csv"}
       model_config_path: {type: path, default: "config/model_config.yaml"}
       output_path: {type: path, default: "data/models"}
       model_name: {type: string, default: "model"}
       experiment_name: {type: string, default: "Default"}
     command: "python src/train.py --data_path {data_path} --model_config_path {model_config_path} --output_path {output_path} --model_name {model_name} --experiment_name {experiment_name}"
+  deploy:
+    parameters:
+      model_name: {type: string}
+      model_version: {type: number}
+    command: "python src/deploy.py --model_name {model_name} --model_version {model_version}"
