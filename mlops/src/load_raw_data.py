@@ -14,7 +14,8 @@ import mlflow
 )
 def load_raw_data(competition, output_path):
     """Download raw data from Kaggle"""
-    output_path = pathlib.Path(output_path)
+    output_path = pathlib.Path(output_path) / competition
+    output_path.mkdir(parents=True, exist_ok=True)
     with mlflow.start_run():
         kaggle = KaggleApi()
         kaggle.authenticate()
@@ -26,10 +27,7 @@ def load_raw_data(competition, output_path):
             output_path / f"{competition}.zip", "r"
         ) as zip_ref:
             zip_ref.extractall(output_path)
-        train_data_path = output_path / "train.zip"
-        test_data_path = output_path / "test1.zip"
-        mlflow.log_artifact(train_data_path, "raw train data")
-        mlflow.log_artifact(test_data_path, "raw test data")
+        mlflow.log_artifact(output_path, "raw data")
 
 
 if __name__ == "__main__":
