@@ -1,21 +1,21 @@
-from typing import List
-from ludwig.api import LudwigModel
 from pathlib import Path
 import pandas as pd
 from prediction import Prediction
+import mlflow
+from mlflow.pyfunc import PyFuncModel
 
 
-class LudwigHandler:
-    """Class that handles all Ludwig model related tasks.
+class ModelHandler:
+    """Class that handles all model related tasks.
 
     Attributes:
         model_dir (:obj:`Path`): The path to the model's directory.
-        model (:obj:`LudwigModel`): The LudwigModel object.
+        model (:obj:`PyFuncModel`): The PyFuncModel object.
 
     """
 
-    MODEL_DIR: Path = Path(__file__).parent.parent / "models"
-    """The path to the pre-trained Ludwig models
+    MODEL_DIR: Path = Path(__file__).parent / "models"
+    """The path to the pre-trained models
 
         :meta hide-value:
     """
@@ -28,14 +28,14 @@ class LudwigHandler:
         return models
 
     def __init__(self, model_name: str):
-        """The constructor for the LudwigHandler class.
+        """The constructor for the ModelHandler class.
 
         Args:
             model_name (str): The name of the model to use.
 
         """
         self.model_dir: Path = self.MODEL_DIR / model_name
-        self.model: LudwigModel = LudwigModel.load(str(self.model_dir))
+        self.model: PyFuncModel = mlflow.pyfunc.load_model(str(self.model_dir))
 
     def predict(self, image_path: Path) -> Prediction:
         """Makes a prediction for the given image.
@@ -49,14 +49,14 @@ class LudwigHandler:
         """
 
         # path to the image to predict
-        images_to_predict: dict[str, List[str]] = {
-            "image_path": [str(image_path)]
-        }
+        images_to_predict: pd.DataFrame = pd.DataFrame.from_dict(
+            {"file_path": [str(image_path)]}
+        )
 
         # predictions returned by the model
         # make sure they are converted to DataFrame to enable typing checks
         all_predictions: pd.DataFrame = pd.DataFrame(
-            self.model.predict(dataset=images_to_predict)[0]
+            self.model.predict(data=images_to_predict)
         )
 
         # extract the predicted class

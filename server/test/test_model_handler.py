@@ -1,31 +1,24 @@
 import pytest
 
-from tnyml.ludwig_handler import LudwigHandler
+from tnyml.model_handler import ModelHandler
 from pathlib import Path
 
 
 @pytest.fixture
 def init_model():
-    return LudwigHandler("cat_dog_model")
+    return ModelHandler("cats-vs-dogs")
 
 
 def test_get_models_should_return_models():
-    models = LudwigHandler.get_models()
-    assert models == ["cat_dog_model", "car_truck_model"]
+    models = ModelHandler.get_models()
+    assert models == ["cats-vs-dogs", "titanic"]
 
 
 def test_predict(init_model):
-    image_path = (
-        Path(__file__).parent.parent
-        / "public"
-        / "user"
-        / "uploads"
-        / "Uploads_cat_dog"
-        / "image_to_predict.jpg"
-    )
+    image_path = Path(__file__).parent / "data" / "testfile.jpg"
     prediction = init_model.predict(image_path)
     assert prediction.prediction == "cat"
-    assert prediction.confidence == 0.998
+    assert prediction.confidence == 0.705
 
 
 # TODO: write tests to handle missing image, wrong model, etc.

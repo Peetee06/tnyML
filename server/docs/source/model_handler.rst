@@ -1,7 +1,7 @@
-Ludwig Handler
+Model Handler
 =================================
 
-.. automodule:: ludwig_handler
+.. automodule:: model_handler
    :members:
    :undoc-members:
    :show-inheritance:

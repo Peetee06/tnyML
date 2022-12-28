@@ -11,7 +11,7 @@ Welcome to tnyML's documentation!
    :caption: Contents:
 
    prediction
-   ludwig_handler
+   model_handler
 
 
 
