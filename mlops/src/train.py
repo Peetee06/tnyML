@@ -30,26 +30,35 @@ def train(
     data_path, model_config_path, output_path, model_name, experiment_name
 ):
     """Train model"""
+
     data_path = pathlib.Path(data_path)
     output_path = pathlib.Path(output_path)
-    with mlflow.start_run():
-        # load data
-        df = pd.read_csv(data_path)
 
-        # create model with mlflow callback
-        # will log metrics, artifacts, and model
-        model = LudwigModel(
-            config=model_config_path,
-            logging_level=20,
-            callbacks=[MlflowCallback()],
-        )
-        # train model
-        model.train(
-            dataset=df,
-            experiment_name=experiment_name,
-            model_name=model_name,
-            output_directory=output_path,
-        )
+    # load data
+    df = pd.read_csv(data_path)
+
+    # create model with mlflow callback
+    # will log metrics, artifacts, and model
+    model = LudwigModel(
+        config=model_config_path,
+        logging_level=30,
+        callbacks=[MlflowCallback()],
+    )
+    # train model
+    _, _, output_dir = model.train(
+        dataset=df,
+        experiment_name=experiment_name,
+        model_name=model_name,
+        output_directory=output_path,
+    )
+
+    # set run name to model output directory name
+    # this is a hack to get around the fact that Ludwig
+    # doesn't allow you to set the run name
+    new_run_name = output_dir.split("/")[-1]
+    last_run = mlflow.last_active_run()
+    with mlflow.start_run(run_id=last_run.info.run_id):
+        mlflow.set_tag("mlflow.runName", new_run_name)
 
 
 if __name__ == "__main__":
